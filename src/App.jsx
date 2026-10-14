@@ -5,6 +5,9 @@ import PrivateRoute from './guards/PrivateRoute';
 import GuestRoute from './guards/GuestRoute';
 import Login from './pages/Login';
 import Register from './pages/Register';
+import Catalog from './pages/Catalog';
+import Details from './pages/Details';
+import Create from './pages/Create';
 
 function Home() {
   return <h1>Блог за рецепти</h1>;
@@ -21,6 +24,8 @@ export default function App() {
       <main>
         <Routes>
           <Route path="/" element={<Home />} />
+          <Route path="/recipes" element={<Catalog />} />
+          <Route path="/recipes/:id" element={<Details />} />
 
           <Route element={<GuestRoute />}>
             <Route path="/login" element={<Login />} />
@@ -28,7 +33,7 @@ export default function App() {
           </Route>
 
           <Route element={<PrivateRoute />}>
-            {/* тук ще добавим /recipes/create и др. */}
+            <Route path="/recipes/create" element={<Create />} />
           </Route>
         </Routes>
       </main>
