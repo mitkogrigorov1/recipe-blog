@@ -28,3 +28,19 @@ export async function create(recipe, userId) {
   if (error) throw error;
   return data;
 }
+
+export async function update(id, recipe) {
+  const { data, error } = await supabase
+    .from('recipes')
+    .update(recipe)
+    .eq('id', id)
+    .select()
+    .single();
+  if (error) throw error;
+  return data;
+}
+
+export async function remove(id) {
+  const { error } = await supabase.from('recipes').delete().eq('id', id);
+  if (error) throw error;
+}
