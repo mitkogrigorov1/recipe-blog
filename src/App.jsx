@@ -8,6 +8,8 @@ import Register from './pages/Register';
 import Catalog from './pages/Catalog';
 import Details from './pages/Details';
 import Create from './pages/Create';
+import Edit from './pages/Edit';
+import OwnerRoute from './guards/OwnerRoute';
 
 function Home() {
   return <h1>Блог за рецепти</h1>;
@@ -34,6 +36,9 @@ export default function App() {
 
           <Route element={<PrivateRoute />}>
             <Route path="/recipes/create" element={<Create />} />
+            <Route path="/recipes/:id/edit" element={<OwnerRoute />}>
+             <Route index element={<Edit />} />
+            </Route>
           </Route>
         </Routes>
       </main>
