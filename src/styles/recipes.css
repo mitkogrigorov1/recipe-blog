@@ -73,3 +73,43 @@
     text-decoration: none; 
     font-size: 1rem; 
 }
+
+.likes { 
+    display: flex; 
+    align-items: center; 
+    gap: 0.75rem; 
+    margin-top: 1.5rem; 
+}
+
+.likes button, .comments button { 
+    padding: 0.4rem 0.8rem; 
+    cursor: pointer; 
+}
+
+.comments { 
+    margin-top: 2rem; 
+}
+
+.comments ul { 
+    list-style: none; 
+    padding: 0; 
+}
+
+.comments li { 
+    border-bottom: 1px solid #ddd; 
+    padding: 0.75rem 0; 
+}
+
+.comments textarea { 
+    width: 100%; 
+    padding: 0.6rem; 
+    font-family: inherit; 
+    font-size: 1rem; 
+    box-sizing: border-box; 
+    margin-bottom: 0.5rem; 
+}
+
+.date { 
+    color: #777; 
+    font-size: 0.85rem; 
+}

@@ -10,6 +10,7 @@ import Details from './pages/Details';
 import Create from './pages/Create';
 import Edit from './pages/Edit';
 import OwnerRoute from './guards/OwnerRoute';
+import Profile from './pages/Profile';
 
 function Home() {
   return <h1>Блог за рецепти</h1>;
@@ -40,6 +41,8 @@ export default function App() {
              <Route index element={<Edit />} />
             </Route>
           </Route>
+
+          <Route path="/profile/:userId" element={<Profile />} />
         </Routes>
       </main>
     </>

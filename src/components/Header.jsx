@@ -11,6 +11,7 @@ export default function Header() {
       {user ? (
         <>
           <Link to="/recipes/create">Нова рецепта</Link>
+          <Link to={`/profile/${user.id}`}>Моите рецепти</Link>
           <span>{user.email}</span>
           <button onClick={logout}>Изход</button>
         </>

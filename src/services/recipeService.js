@@ -44,3 +44,13 @@ export async function remove(id) {
   const { error } = await supabase.from('recipes').delete().eq('id', id);
   if (error) throw error;
 }
+
+export async function getByAuthor(userId) {
+  const { data, error } = await supabase
+    .from('recipes')
+    .select('*')
+    .eq('author_id', userId)
+    .order('created_at', { ascending: false });
+  if (error) throw error;
+  return data;
+}
