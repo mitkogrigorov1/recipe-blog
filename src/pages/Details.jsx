@@ -5,6 +5,8 @@ import { getOne, remove } from '../services/recipeService';
 import Spinner from '../components/Spinner';
 import ErrorMessage from '../components/ErrorMessage';
 import '../styles/recipes.css';
+import LikeButton from '../components/LikeButton';
+import Comments from '../components/Comments';
 
 export default function Details() {
   const { id } = useParams();
@@ -57,6 +59,7 @@ export default function Details() {
 
       <h2>Начин на приготвяне</h2>
       <p className="pre">{recipe.instructions}</p>
+      <p><Link to={`/profile/${recipe.author_id}`}>Още рецепти от този автор</Link></p>
 
       {isOwner && (
         <div className="actions">
@@ -66,6 +69,10 @@ export default function Details() {
          </button>
         </div>
      )}
+
+     <LikeButton recipeId={recipe.id} />
+     <Comments recipeId={recipe.id} />
+
     </article>
   );
 }
