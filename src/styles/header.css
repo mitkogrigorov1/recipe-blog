@@ -1,0 +1,46 @@
+.header {
+  display: flex;
+  align-items: center;
+  gap: 1.25rem;
+  padding: 0.9rem 2rem;
+  background: var(--card);
+  border-bottom: 1px solid var(--border);
+  box-shadow: var(--shadow);
+  flex-wrap: wrap;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+
+.header a { 
+    color: var(--text); 
+    font-weight: 500; 
+}
+
+.header a:hover { 
+    color: var(--accent); 
+    text-decoration: none; 
+}
+
+.header .spacer { 
+    flex: 1; 
+}
+
+.header .user { 
+    color: var(--muted); 
+    font-size: 0.9rem; 
+}
+
+.header button { 
+    padding: 0.35rem 0.9rem; 
+    font-size: 0.9rem; 
+}
+
+.footer {
+  text-align: center;
+  color: var(--muted);
+  font-size: 0.9rem;
+  padding: 1.5rem;
+  border-top: 1px solid var(--border);
+  
+}
