@@ -3,18 +3,18 @@ import { useAuth } from './contexts/AuthContext';
 import Header from './components/Header';
 import PrivateRoute from './guards/PrivateRoute';
 import GuestRoute from './guards/GuestRoute';
+import Home from './pages/Home';
 import Login from './pages/Login';
 import Register from './pages/Register';
 import Catalog from './pages/Catalog';
 import Details from './pages/Details';
 import Create from './pages/Create';
 import Edit from './pages/Edit';
+import NotFound from './pages/NotFound';
 import OwnerRoute from './guards/OwnerRoute';
 import Profile from './pages/Profile';
 
-function Home() {
-  return <h1>Блог за рецепти</h1>;
-}
+
 
 export default function App() {
   const { loading } = useAuth();
@@ -41,10 +41,13 @@ export default function App() {
              <Route index element={<Edit />} />
             </Route>
           </Route>
-
           <Route path="/profile/:userId" element={<Profile />} />
+
+          <Route path="*" element={<NotFound />} />
         </Routes>
       </main>
+
+      <footer className="footer">© 2026 Блог за рецепти</footer>
     </>
   );
 }
