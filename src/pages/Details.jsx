@@ -64,7 +64,7 @@ export default function Details() {
       {isOwner && (
         <div className="actions">
          <Link to={`/recipes/${recipe.id}/edit`} className="btn">Редактирай</Link>
-         <button onClick={onDelete} disabled={deleting}>
+         <button className="danger" onClick={onDelete} disabled={deleting}>
            {deleting ? 'Изтриване...' : 'Изтрий'}
          </button>
         </div>

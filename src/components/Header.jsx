@@ -1,13 +1,15 @@
 import { Link } from 'react-router';
 import { useAuth } from '../contexts/AuthContext';
+import '../styles/header.css'
 
 export default function Header() {
   const { user, logout } = useAuth();
 
   return (
-    <header style={{ display: 'flex', gap: '1rem', padding: '1rem' }}>
+    <header className='header'>
       <Link to="/">Начало</Link>
       <Link to="/recipes">Рецепти</Link>
+      <span className='spacer' />
       {user ? (
         <>
           <Link to="/recipes/create">Нова рецепта</Link>
